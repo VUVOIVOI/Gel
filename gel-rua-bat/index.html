@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gel Rửa Bát Tự Nhiên</title>
+    <!-- Font Awesome CDN (nếu bạn muốn sử dụng các biểu tượng từ Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pV0f3F0R9Kk3Lpjz5aO6vRkR6YJ+2RzYjHKdXe3uZhHuxRb9E2k7zHfC7pB6E1Dr5uE1cYlXRCMEiW8mVfLgXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 90px; /* Chiều cao của footer */
+        }
+        header {
+            background-color: #f6f8f6;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 4em;
+            color: #48d443; /* Vàng Nhạt */
+        }
+        header h2 {
+            margin: 10px 0 5px 0;
+            font-size: 1.5em;
+            font-weight: normal;
+            color: #080404; /* Trắng */
+        }
+        header p.small-text {
+            font-size: 0.9em;
+            margin: 0;
+            color: #0f0505; /* Xám Nhạt */
+        }
+        /* Phần biểu tượng trong header */
+        .header-icons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .header-icons img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        /* Nếu sử dụng Font Awesome icons */
+        .header-icons a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.8em;
+            transition: color 0.3s;
+        }
+        .header-icons a:hover {
+            color: #FFF176; /* Màu Vàng Nhạt khi hover */
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .ingredients {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Chia đều khoảng cách giữa các phần tử */
+            margin-top: 20px;
+        }
+        .ingredient {
+            text-align: center;
+            margin: 10px 0;
+            width: 48%; /* Giúp hai phần tử nằm cùng hàng */
+        }
+        .ingredient img {
+            width: 150px; /* Phóng to từ 100px lên 150px */
+            height: 150px; /* Phóng to từ 100px lên 150px */
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+        /* Phần mua sản phẩm */
+        .purchase-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e8f5e9; /* Màu nền nhẹ */
+            border-radius: 8px;
+            text-align: center;
+        }
+        .purchase-section h2 {
+            color: #388E3C;
+            margin-bottom: 20px;
+        }
+        .price {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .price .original-price {
+            text-decoration: line-through;
+            color: #BDBDBD;
+            margin-right: 10px;
+        }
+        .price .new-price {
+            color: #D32F2F;
+            font-weight: bold;
+        }
+        .purchase-button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #388E3C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .purchase-button:hover {
+            background-color: #2E7D32;
+        }
+        /* Phần hình ảnh tặng kèm */
+        .bonus-section {
+            margin-top: 30px;
+        }
+        .bonus-section h3 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .bonus-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .bonus-images img {
+            width: 150px; /* Kích thước có thể thay đổi */
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+        /* Responsive Design */
+        @media (max-width: 800px) {
+            .ingredients {
+                flex-direction: column;
+                align-items: center;
+            }
+            .ingredient {
+                width: 80%; /* Một cột trên màn hình nhỏ */
+            }
+            .header-icons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header h2 {
+                font-size: 1.2em;
+            }
+            .ingredient img {
+                width: 120px;
+                height: 120px;
+            }
+            .purchase-section h2 {
+                font-size: 1.3em;
+            }
+            .price {
+                font-size: 1.2em;
+            }
+            .bonus-images img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gel Rửa Bát Tự Nhiên</h1>
+    <h2>Khoa Sư Phạm Khoa Học Tự Nhiên</h2>
+    <p class="small-text">Ngành Sư Phạm Hóa</p>
+    
+    <!-- Thêm ba biểu tượng hoặc hình ảnh vào header -->
+    <div class="header-icons">
+        <!-- Nếu sử dụng hình ảnh biểu tượng -->
+        <img src="images/icon1.png" alt="Icon 1">
+        <img src="images/icon2.png" alt="Icon 2">
+        
+        <!-- Nếu sử dụng Font Awesome icons, hãy comment các thẻ <img> ở trên và sử dụng các thẻ <a> dưới đây:
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        -->
+    </div>
+</header>
+
+<div class="container">
+    <h1>Trải Nghiệm Sạch Sẽ Và An Toàn</h1>
+    <p>Gel rửa bát tự nhiên của chúng tôi không chỉ loại bỏ dầu mỡ và vết bẩn hiệu quả mà còn bảo vệ da tay với các thành phần từ thiên nhiên như xá xị, bạc hà, cây sả, và bưởi. Sản phẩm thân thiện với môi trường, an toàn cho cả gia đình.</p>
+
+    <!-- Thông tin về các thành phần -->
+    <h2>Các Thành Phần Tự Nhiên Chính</h2>
+    <div class="ingredients">
+        <div class="ingredient">
+            <img src="images/xaxi.png" alt="Xá Xị">
+            <h3>Xá Xị</h3>
+            <p>Tinh chất từ xá xị giúp làm sạch sâu và mang lại hương thơm dễ chịu.</p>
+        </div>
+        <div class="ingredient">
+            <img src="images/bac-ha.png" alt="Bạc Hà">
+            <h3>Bạc Hà</h3>
+            <p>Bạc hà giúp làm dịu da tay và tạo cảm giác tươi mát.</p>
+        </div>
+        <div class="ingredient">
+            <img src="images/cay-sa.png" alt="Cây Sả">
+            <h3>Cây Sả</h3>
+            <p>Chiết xuất từ cây sả khử mùi hôi và tăng khả năng làm sạch tự nhiên.</p>
+        </div>
+        <div class="ingredient">
+            <img src="images/buoi.png" alt="Bưởi">
+            <h3>Bưởi</h3>
+            <p>Tinh chất bưởi giúp làm mềm da và mang lại hương thơm tươi mát.</p>
+        </div>
+    </div>
+
+    <!-- Phần Mua Sản Phẩm Với Giá Cực Sốc -->
+    <div class="purchase-section">
+        <h2>Mua Sản Phẩm Với Giá Cực Sốc</h2>
+        <div class="price">
+            <span class="original-price">40k</span>
+            <span class="new-price">35k</span>
+        </div>
+        <button class="purchase-button">Mua Ngay</button>
+        
+        <!-- Phần Hình Ảnh Tặng Kèm -->
+        <div class="bonus-section">
+            <h3>Tặng Kèm</h3>
+            <div class="bonus-images">
+                <!-- Thêm hình ảnh tặng kèm tại đây -->
+                <img src="images/bonus1.png" alt="Bonus 1">
+                <!-- Bạn có thể thêm hoặc loại bỏ các thẻ <img> tùy ý -->
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!-- Usage Instructions Section -->
+    
+        <!-- Steps with Images -->
+        <div class="steps-container">
+            <div class="step">
+                <img src="images/image1.png" alt="Bonus 1">
+                <p>Bước 1: Thêm 1 lượng nước tầm 3-5cm trên bề mặt gel.</p>
+            </div>
+            <div class="step">
+                <img src="images/image2.png" alt="Bonus 1">
+                <p>Bước 2: Hòa tan 3-5 giọt nước rửa chén vào miếng bọt biển, sau đó thêm 1 lượng nước nhỏ vào bọt biển.</p>
+            </div>
+            <div class="step">
+                <img src="images/image3.png" alt="Bonus 1">
+                <p>Bước 3: Bóp nhiều lần để tạo bọt và bắt đầu sử dụng.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<footer>
+    <p>&copy; Nhóm Nghiên Cứu Xin Cảm Ơn Chân Thành Đến Người Ủng Hộ </p>
+</footer>
+
+</body>
+</html>
